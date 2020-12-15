@@ -17,3 +17,25 @@
   <li>Также для запуска приложения необходимо jdk версии 1.8.</li>
   <li>Приложение готово к запуску.</li>
 </ul>
+
+<strong>Данные учётных записей</strong>
+<ul>
+  <li>Админ:
+    <ul>
+      <li>Логин: adm.test.edjll@ya.ru</li>
+      <li>Пароль: 123</li>
+    </ul>
+  </li>
+  <li>Поддержка:
+    <ul>
+      <li>Логин: supp.test.edjll@ya.ru</li>
+      <li>Пароль: 123</li>
+    </ul>
+  </li>
+  <li>Пользователь:
+    <ul>
+      <li>Логин: aleksey.test.edjll@ya.ru</li>
+      <li>Пароль: 123</li>
+    </ul>
+  </li>
+</ul>
