@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.edjll-validation-error {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+}
+.edjll-validation-error::before {
+  content: "❌";
+  position: absolute;
+}
+.edjll-validation-error__text {
+  display: none;
+  position: absolute;
+  width: max-content;
+  right: 100%;
+  bottom: 0;
+  background-color: #1f222d;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  color: #d54646;
+  font-weight: 600;
+  user-select: none;
+}
+.edjll-validation-error:hover .edjll-validation-error__text {
+  display: block;
+}
+
+/*# sourceMappingURL=error.css.map */

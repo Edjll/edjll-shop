@@ -1,0 +1,624 @@
+body-overflow-hidden {
+  overflow: hidden;
+}
+
+.winform {
+  width: 100%;
+  min-height: 400px;
+  height: 400px;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  resize: vertical;
+  position: relative;
+}
+.winform ::-webkit-scrollbar {
+  width: 10px;
+}
+.winform ::-webkit-scrollbar-track {
+  background: #202538;
+}
+.winform ::-webkit-scrollbar-thumb {
+  background: #293565;
+}
+.winform ::-webkit-scrollbar-thumb:hover {
+  background: #293565;
+}
+.winform__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 35px;
+  color: white;
+}
+.winform-fullscreen {
+  width: 100vw;
+  height: 100vh !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+  z-index: 1;
+  resize: none;
+  background-color: #2f3d75;
+}
+
+.header-tags {
+  height: 90%;
+  display: flex;
+  align-self: flex-end;
+  box-sizing: border-box;
+  margin-left: 5px;
+  max-width: calc(100% - 65px);
+  overflow: hidden;
+  position: relative;
+  border-top-left-radius: 0.25rem;
+}
+.header-tags__item {
+  width: 200px;
+  height: 100%;
+  border-radius: 0.25rem 0.25rem 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.6rem;
+  box-sizing: border-box;
+  transition: background-color 0.3s linear;
+  background-color: #002b49;
+}
+.header-tags__item:not(:first-of-type)::before {
+  content: "";
+  width: 0.5px;
+  left: -0.25px;
+  height: 70%;
+  position: absolute;
+  background-color: white;
+  transition: opacity 0.3s linear;
+}
+.header-tags__item:hover {
+  background-color: #232d50;
+}
+.header-tags__item-current {
+  background-color: #293565 !important;
+}
+.header-tags__item:hover:not(:first-of-type)::before, .header-tags__item-current:not(:first-of-type)::before {
+  width: 0;
+  opacity: 0;
+  transition: opacity 0.3s linear, width 0s 0.3s;
+}
+.header-tags__item:hover + .header-tags__item::before, .header-tags__item-current + .header-tags__item::before {
+  width: 0;
+  opacity: 0;
+  transition: opacity 0.3s linear, width 0s 0.3s;
+}
+
+.header-tag {
+  flex-shrink: 0;
+}
+.header-tag__text {
+  cursor: default;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: cursive;
+}
+
+.header-tag__close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14px;
+  height: 14px;
+  position: relative;
+  border-radius: 50%;
+  transition: background-color 0.1s linear;
+  flex-shrink: 0;
+  margin-left: 3px;
+}
+.header-tag__close-button:before {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  transform: rotate(45deg);
+}
+.header-tag__close-button:after {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  transform: rotate(-45deg);
+}
+.header-tag__close-button:hover {
+  background-color: #202538;
+}
+
+.winform-settings {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 5px;
+  background-color: #002b49;
+  border-radius: 0.25rem 0.25rem 0 0;
+  height: 90%;
+  padding: 0 3px;
+}
+
+.winform-tag-add {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.winform-tag-add__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.1s linear;
+}
+.winform-tag-add__button::before {
+  content: "";
+  width: 12px;
+  height: 2px;
+  position: absolute;
+  background-color: white;
+}
+.winform-tag-add__button::after {
+  content: "";
+  width: 2px;
+  height: 12px;
+  position: absolute;
+  background-color: white;
+}
+.winform-tag-add__button:hover {
+  background-color: #293565;
+}
+
+.winform-tag-add__button:hover .winform-tag-add__button::before {
+  background-color: white;
+}
+
+.winform-tag-add:hover {
+  background-color: transparent;
+}
+.winform-tag-add:hover::before {
+  opacity: 1;
+  width: 0.5px;
+}
+
+.winform-resize {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.winform-resize::before {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 40%;
+  border: 1.5px solid transparent;
+  border-color: white transparent transparent white;
+  box-sizing: border-box;
+}
+.winform-resize::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 40%;
+  border: 1.5px solid transparent;
+  border-color: transparent white white transparent;
+  align-self: flex-end;
+  box-sizing: border-box;
+}
+.winform-resize:hover {
+  background-color: #293565;
+}
+.winform-resize-active::before {
+  border-color: transparent white white transparent;
+}
+.winform-resize-active::after {
+  border-color: white transparent transparent white;
+}
+
+.winform-pages {
+  height: calc(100% - 35px);
+  width: 100%;
+  position: relative;
+  border-radius: 0.25rem 0.25rem 0 0;
+  overflow: hidden;
+}
+.winform-pages__select {
+  width: 100%;
+  height: 0;
+  background-color: #272e4c;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  z-index: 2;
+  transition: height 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid #293565;
+}
+.winform-pages__select-active {
+  height: calc(100% - 35px);
+  transition: height 0.3s 0.3s;
+}
+.winform-pages__item-previous {
+  transform: translateX(-100%);
+}
+.winform-pages__item-next {
+  transform: translateX(100%);
+}
+.winform-pages__item-current {
+  visibility: visible !important;
+}
+.winform-pages__item-visible {
+  visibility: visible !important;
+}
+
+.winform-page {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: transform 0.3s linear;
+  visibility: hidden;
+}
+.winform-page__header {
+  width: 100%;
+  height: 35px;
+  background-color: #293565;
+}
+.winform-page__header-active .winform-page-header__inner {
+  width: 100%;
+  height: 31.5px;
+  margin-bottom: 0;
+  border-radius: 1rem 1rem 0 0;
+  transition: width 0.3s, border-radius 0.3s, background-color 0.3s;
+  background-color: #272e4c;
+}
+.winform-page__header-active .winform-page-header__select {
+  padding: 0 0 8px 0;
+}
+.winform-page__header-active .winform-page-header__select::before {
+  transform: rotate(-45deg);
+  transform-origin: right;
+}
+.winform-page__header-active .winform-page-header__select::after {
+  transform: rotate(45deg);
+  transform-origin: left;
+}
+.winform-page__content {
+  overflow-y: scroll;
+  height: calc(100% - 67px);
+}
+
+.winform-page-header {
+  display: flex;
+  justify-content: center;
+}
+.winform-page-header__inner {
+  width: 90%;
+  height: 28px;
+  display: flex;
+  margin: 3.5px auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: #202538;
+  transition: width 0.3s 0.3s, height 0s 0.3s, border-radius 0.3s 0.3s, margin-bottom 0s 0.3s, background-color 0.3s 0.3s;
+}
+.winform-page-header__input {
+  width: calc(100% - 30px);
+}
+.winform-page-header__input input {
+  width: 100%;
+  background-color: transparent;
+  height: 100%;
+  border: none;
+  padding: 0;
+  outline: none;
+  color: white;
+  padding-left: 15px;
+  font-family: cursive;
+}
+.winform-page-header__select {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: background-color 0.1s linear, padding 0.3s;
+  cursor: pointer;
+}
+.winform-page-header__select::before {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: white;
+  display: block;
+  transform: rotate(45deg);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+.winform-page-header__select::after {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: white;
+  display: block;
+  transform: rotate(-45deg);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.winform-page-header__select:hover {
+  background-color: #293565;
+}
+
+.winform-select__spinner {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to right, white 10%, transparent 42%);
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotation 1s infinite linear;
+}
+.winform-select__spinner::before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 100%;
+}
+.winform-select__spinner::after {
+  content: "";
+  width: 75%;
+  height: 75%;
+  background-color: #272e4c;
+  position: absolute;
+  border-radius: 50%;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.winform-page-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+  position: relative;
+}
+
+.winform-page-content__select {
+  position: absolute;
+}
+
+.winform-page-attribute {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  color: white;
+  background-color: #2f3d75;
+}
+.winform-page-attribute:nth-of-type(2n) {
+  background-color: #232a48;
+}
+.winform-page-attribute:nth-of-type(3n) {
+  background-color: #25305d;
+}
+.winform-page-attribute:nth-of-type(4n) {
+  background-color: #172148;
+}
+.winform-page-attribute__item {
+  margin: 1rem 1rem 0 1rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.winform-page-attribute__item__select-content {
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  background-color: red;
+  top: 100%;
+  border-radius: 0 0 0.25rem 0.25rem;
+  display: none;
+  z-index: 1;
+}
+.winform-page-attribute__item__select-content-active {
+  display: block;
+}
+.winform-page-attribute__inner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  margin: 1rem;
+}
+
+.winform-attribute-name,
+.winform-attribute-description,
+.winform-attribute-value,
+.winform-attribute-unit {
+  background-color: inherit;
+}
+
+.winform-attribute-name__inner,
+.winform-attribute-description__inner,
+.winform-attribute-value__inner,
+.winform-attribute-unit__inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  background-color: inherit;
+  margin: 0;
+}
+.winform-attribute-name__inner textarea,
+.winform-attribute-description__inner textarea,
+.winform-attribute-value__inner textarea,
+.winform-attribute-unit__inner textarea {
+  resize: vertical;
+}
+.winform-attribute-name__title,
+.winform-attribute-description__title,
+.winform-attribute-value__title,
+.winform-attribute-unit__title {
+  font-family: cursive;
+  font-size: 1.1rem;
+}
+
+.winform-attribute-description__input,
+.winform-attribute-unit__input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: cursive;
+  font-size: 1rem;
+  padding: 0.235rem 0.375rem;
+  border: 1.5px solid white;
+  border-radius: 0.25rem;
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
+
+.winform-attribute-name__input input,
+.winform-attribute-value__input input {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: cursive;
+  font-size: 1rem;
+  padding: 0.235rem 0.375rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+}
+
+.winform-attribute-name-input,
+.winform-attribute-value-input {
+  display: flex;
+  border-radius: 0.25rem;
+  border: 1.5px solid white;
+  align-items: center;
+  padding-right: 2px;
+}
+
+.winform-page-attribute__item__select-button {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 8px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition: background-color 0.1s linear, padding 0.3s;
+  cursor: pointer;
+}
+.winform-page-attribute__item__select-button::before {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: white;
+  display: block;
+  transform: rotate(45deg);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+.winform-page-attribute__item__select-button::after {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background-color: white;
+  display: block;
+  transform: rotate(-45deg);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+.winform-page-attribute__item__select-button:hover {
+  background-color: #293565;
+}
+.winform-page-attribute__item__select-button-active {
+  padding: 0 0 8px 0;
+}
+.winform-page-attribute__item__select-button-active::before {
+  transform: rotate(-45deg);
+  transform-origin: right;
+}
+.winform-page-attribute__item__select-button-active::after {
+  transform: rotate(45deg);
+  transform-origin: left;
+}
+
+.winform-page__add {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 32px;
+  background-color: #293565;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winform-page-add__button {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.winform-page-add__button:hover {
+  background-color: #2f3d75;
+}
+
+.winform-page-add__button::before {
+  content: '';
+  width: 16px;
+  display: block;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+}
+
+.winform-page-add__button::after {
+  content: '';
+  width: 2px;
+  display: block;
+  height: 16px;
+  background-color: white;
+  position: absolute;
+}

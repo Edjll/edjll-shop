@@ -1,0 +1,28 @@
+.edjll-form-group,
+.edjll-form-group-style {
+  margin-bottom: 0 !important;
+  position: relative;
+
+  &__delete {
+    position: absolute;
+    margin-left: -1rem;
+    padding: 0 .5rem;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 0.1rem;
+      height: 1.2rem;
+      background-color: #d16767;
+      transition: transform .2s;
+    }
+
+    &:hover {
+
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

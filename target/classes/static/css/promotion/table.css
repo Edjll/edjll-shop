@@ -1,0 +1,50 @@
+.table {
+  margin-bottom: 0;
+}
+.table__body__create-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+.table__body__create-row:hover {
+  opacity: 0.8;
+}
+.table__body__create-row__item {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+.table__body__create-row__item__text {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 0.75rem;
+  margin: 0.5rem 0;
+  height: 100%;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  font-family: system-ui, serif;
+}
+.table__body__create-row__item__input {
+  width: 100%;
+  height: 100%;
+}
+.table__body__create-row__item:first-of-type .table__body__create-row__item__text {
+  width: 100px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+.table__body__create-row__item:last-of-type .table__body__create-row__item__text {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/*# sourceMappingURL=table.css.map */

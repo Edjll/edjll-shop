@@ -1,0 +1,141 @@
+.table {
+  width: 100%;
+  height: calc(100% - 70px);
+  font-family: system-ui, serif;
+  font-size: 1.2rem;
+  display: grid;
+  grid-template-rows: max-content;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 21, 0.05);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    transition: background-color .2s;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #181924;
+  }
+
+  &__head {
+    width: max-content;
+    min-width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem 0.5rem 1rem;
+    border-bottom: 2px solid rgba(255,255,255,.1);
+    box-sizing: border-box;
+
+    &__item {
+      width: 100%;
+      min-width: 80px;
+      color: #e1e1e1;
+      font-weight: 500;
+      font-size: 1rem;
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+
+      &--id {
+        width: 20%;
+      }
+    }
+  }
+
+  &__body {
+    overflow-y: scroll;
+    width: max-content;
+    min-width: 100%;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: transparent;
+      transition: background-color .2s;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #181924;
+    }
+
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 0.5rem;
+
+      &:not(:last-of-type) {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+      }
+
+      &:nth-of-type(odd) {
+        background-color: rgba(0,0,21,.05);
+      }
+
+      &__item {
+        width: 100%;
+        min-width: 80px;
+        color: #e1e1e1;
+        box-sizing: border-box;
+        padding: 0.5rem;
+        font-size: 0.9rem;
+        max-width: 540px;
+
+        &-remove {
+          position: absolute;
+          margin-left: -1rem;
+          padding: 0 .5rem;
+          cursor: pointer;
+
+          &::before {
+            content: '';
+            display: block;
+            width: 0.1rem;
+            height: 1.2rem;
+            background-color: #d16767;
+            transition: transform .2s;
+          }
+
+          &:hover {
+
+            &::before {
+              transform: rotate(90deg);
+            }
+          }
+        }
+
+        &--truncate {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        &--id {
+          width: 20%;
+        }
+
+        & img {
+          height: 32px;
+        }
+
+        &:first-of-type {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

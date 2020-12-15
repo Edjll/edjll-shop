@@ -1,0 +1,10 @@
+package ru.edjll.shop.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import ru.edjll.shop.domain.Country;
+
+@Repository
+public interface CountryRepository extends JpaRepository<Country, Long> {
+    Country getCountryByName(String name);
+}

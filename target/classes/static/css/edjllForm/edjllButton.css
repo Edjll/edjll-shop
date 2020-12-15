@@ -1,0 +1,25 @@
+.edjll-button,
+.edjll-button-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  color: #fff;
+  background-color: #4638c2;
+  border: 1px solid #4638c2;
+  padding: 0.375rem 0.75rem;
+  font-family: system-ui, serif;
+  font-weight: 600;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s, background-color 0.15s;
+  margin-top: 1rem;
+  outline: none !important;
+}
+.edjll-button:hover,
+.edjll-button-style:hover {
+  background-color: #3b2fa4;
+  border: 1px solid #3b2fa4;
+}
+
+/*# sourceMappingURL=edjllButton.css.map */

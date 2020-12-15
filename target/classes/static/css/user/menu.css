@@ -1,0 +1,14 @@
+.user-menu {
+  padding: 0 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.user-menu__icon {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+.user-menu::after {
+  display: none;
+}
+
+/*# sourceMappingURL=menu.css.map */

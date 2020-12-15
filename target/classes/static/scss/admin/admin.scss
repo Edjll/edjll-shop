@@ -1,0 +1,47 @@
+@import "adminPanel";
+@import "adminPageControls";
+@import "../bootstrap/bootstrapCustom";
+
+body {
+  background-color: #0a0b18;
+}
+
+main {
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.table-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+  border-radius: .25rem;
+  background-color: #23242d;
+  border: 1px solid #181924;
+}
+
+.status {
+
+  &-error {
+    padding: .2rem .4rem;
+    border-radius: .25rem;
+    background-color: #d16767;
+  }
+
+  &-success {
+    padding: .2rem .4rem;
+    border-radius: .25rem;
+    background-color: #45a164;
+  }
+
+  &-processing {
+    padding: .2rem .4rem;
+    border-radius: .25rem;
+    background-color: #e1a82d;
+  }
+}

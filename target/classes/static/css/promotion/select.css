@@ -1,0 +1,131 @@
+.select {
+  position: relative;
+}
+.select-active .select__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.select-active .select__content {
+  z-index: 1;
+}
+.select-active .select__content-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.select__content {
+  width: calc(100% - 32px);
+  height: 400%;
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  border-radius: 0 0 0.25rem 0.25rem;
+  border: 1px solid #ced4da;
+  overflow-y: scroll;
+  display: none;
+}
+.select__content-loading .select__content__items {
+  display: none;
+}
+.select__content-loading .select__content__spinner {
+  display: flex;
+}
+.select__content__spinner {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(to right, #002b49 10%, transparent 42%);
+  border-radius: 50%;
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  animation: rotation 1s infinite linear;
+}
+.select__content__spinner::before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  background-color: #002b49;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 100%;
+}
+.select__content__spinner::after {
+  content: "";
+  width: 75%;
+  height: 75%;
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+}
+.select__content__items {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.select__content__item {
+  width: 100%;
+  height: max-content;
+  border-bottom: 1px solid #ced4da;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.select__content__item > span {
+  display: block;
+  padding: 0.5rem;
+  width: 100%;
+}
+.select__input {
+  width: 100%;
+  display: flex;
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+}
+.select__input > input[type=text] {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 0.6rem;
+  box-sizing: border-box;
+}
+.select__button {
+  width: 32px;
+  height: 32px;
+  border-left: 1px solid #ced4da;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  cursor: pointer;
+}
+.select__button::before {
+  content: "";
+  width: 12px;
+  height: 2px;
+  background-color: #ced4da;
+  transform: rotate(45deg);
+  transform-origin: right;
+}
+.select__button::after {
+  content: "";
+  width: 12px;
+  height: 2px;
+  background-color: #ced4da;
+  transform: rotate(-45deg);
+  transform-origin: left;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=select.css.map */

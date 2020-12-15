@@ -1,0 +1,139 @@
+.admin-menu {
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #181924;
+  }
+
+  &__item {
+    text-decoration: none !important;
+
+    &__title {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 55px;
+      border: none;
+      outline: none !important;
+      border-top: 1px solid rgba(0,0,0,0);
+      background-color: transparent;
+      transition: background-color .2s;
+      text-decoration: none !important;
+      cursor: pointer;
+      position: relative;
+
+      &:hover {
+        background-color: #4638c2 !important;
+        color: white;
+      }
+
+      &__img {
+        width: 50px;
+        height: 55px;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+
+        & > img {
+          width: 28px;
+          height: 28px;
+          user-select: none;
+        }
+      }
+
+      &__name {
+
+        & > span {
+          font-size: 16px;
+          color: #c2c2c2;
+          text-decoration: none;
+          font-family: system-ui, serif;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+          white-space: nowrap;
+          user-select: none;
+        }
+      }
+
+      &__expend {
+        position: absolute;
+        left: 203px;
+        width: 6px;
+        height: 6px;
+        transform: rotate(-45deg);
+        transition: transform 0.2s;
+
+        &::before {
+          content: '';
+          display: block;
+          width: 100%;
+          height: 1px;
+          position: absolute;
+          background-color: #c2c2c2;
+        }
+
+        &::after {
+          content: '';
+          display: block;
+          width: 1px;
+          height: 100%;
+          position: absolute;
+          background-color: #c2c2c2;
+        }
+      }
+    }
+
+    &__list {
+      height: 0px;
+      overflow: hidden;
+      transition: height 0.2s;
+
+      &__inner {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      &__item {
+
+        &__link {
+          display: block;
+          text-decoration: none !important;
+          background-color: rgba(0,0,0,.2);
+          padding: 10px 0 10px 40px;
+
+          & > span {
+            font-family: system-ui, serif;
+            font-weight: 300;
+            color: #c2c2c2;
+            font-size: 0.9rem;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    &--active & {
+      &__title {
+        background-color: rgb(0 0 0 / 12%);
+
+        &__expend {
+          transform: rotate(-135deg);
+        }
+      }
+    }
+  }
+}

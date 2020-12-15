@@ -1,0 +1,102 @@
+.edjll-toasts {
+  width: 250px;
+  max-height: calc(100vh - 2rem);
+  overflow-y: scroll;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1;
+}
+.edjll-toasts::-webkit-scrollbar {
+  width: 0;
+}
+.edjll-toasts::-webkit-scrollbar-track {
+  background: transparent;
+}
+.edjll-toasts::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.edjll-toasts::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+.edjll-toasts__item {
+  width: 100%;
+  max-height: 200px;
+  min-height: 100px;
+  background-color: #23242d;
+  border-radius: 0.25rem;
+  border: 1px solid #181924;
+  color: rgba(255, 255, 255, 0.75);
+}
+.edjll-toasts__item:not(:first-of-type) {
+  margin-top: 1rem;
+}
+.edjll-toasts__item__header {
+  width: 100%;
+  background-color: #20202a;
+  border-bottom: 1px solid #181924;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+.edjll-toasts__item__header__inner {
+  display: flex;
+  align-items: center;
+}
+.edjll-toasts__item__header__event {
+  width: 20px;
+  height: 20px;
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+}
+.edjll-toasts__item__header__event--primary {
+  background-color: #4638c2;
+  border-color: #4638c2;
+}
+.edjll-toasts__item__header__event--success {
+  background-color: #45a164;
+  border-color: #45a164;
+}
+.edjll-toasts__item__header__event--warning {
+  background-color: #e1a82d;
+  border-color: #e1a82d;
+}
+.edjll-toasts__item__header__event--error {
+  background-color: #d16767;
+  border-color: #d16767;
+}
+.edjll-toasts__item__header__event--info {
+  background-color: #4799eb;
+  border-color: #4799eb;
+}
+.edjll-toasts__item__header__title {
+  padding: 0 0.4rem;
+}
+.edjll-toasts__item__header__timer {
+  font-size: 0.7rem;
+  font-weight: 300;
+  padding: 0 0.3rem;
+}
+.edjll-toasts__item__header__close-button {
+  padding: 0.2rem;
+  margin: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.edjll-toasts__item__header__close-button:hover .edjll-toasts__item__header__close-button__icon {
+  color: #676d77;
+}
+.edjll-toasts__item__header__close-button__icon {
+  font-size: 1rem;
+  color: #8a93a2;
+  transition: color 0.2s;
+}
+.edjll-toasts__item__body {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+/*# sourceMappingURL=edjllToast.css.map */

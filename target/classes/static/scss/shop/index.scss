@@ -1,0 +1,32 @@
+.edjll-pagination {
+  &__item {
+    margin-right: 0 !important;
+  }
+}
+
+.pag {
+  & > ul {
+    margin-bottom: 0;
+  }
+}
+
+.action-bar-inner {
+  .edjll-select {
+    margin-bottom: 0;
+  }
+}
+
+.shop-filter {
+  padding: 1rem;
+  border-radius: .25rem;
+  border: 1px solid #181924;
+  background-color: #23242d;
+}
+
+.edjll {
+  &-input, &-select {
+    &__settings {
+      display: none;
+    }
+  }
+}

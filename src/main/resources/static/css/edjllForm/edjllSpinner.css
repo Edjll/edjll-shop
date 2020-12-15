@@ -1,0 +1,40 @@
+.edjll-spinner,
+.edjll-spinner-style {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #23242d;
+  z-index: 1;
+}
+.edjll-spinner-blurred,
+.edjll-spinner-style-blurred {
+  background-color: #23242deb;
+}
+.edjll-spinner::before,
+.edjll-spinner-style::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  display: block;
+  border: 5px solid transparent;
+  border-bottom-color: #4638c2;
+  border-top-color: #4638c2;
+  animation: edjll-spinner-rotation 1s linear infinite;
+  border-radius: 50%;
+}
+
+@keyframes edjll-spinner-rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=edjllSpinner.css.map */

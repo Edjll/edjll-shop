@@ -1,0 +1,27 @@
+.edjll-form-group,
+.edjll-form-group-style {
+  margin-bottom: 0 !important;
+  position: relative;
+}
+.edjll-form-group__delete,
+.edjll-form-group-style__delete {
+  position: absolute;
+  margin-left: -1rem;
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+.edjll-form-group__delete::before,
+.edjll-form-group-style__delete::before {
+  content: "";
+  display: block;
+  width: 0.1rem;
+  height: 1.2rem;
+  background-color: #d16767;
+  transition: transform 0.2s;
+}
+.edjll-form-group__delete:hover::before,
+.edjll-form-group-style__delete:hover::before {
+  transform: rotate(90deg);
+}
+
+/*# sourceMappingURL=edjllFormGroup.css.map */

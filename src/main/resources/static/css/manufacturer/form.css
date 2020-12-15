@@ -1,0 +1,52 @@
+.form-upload {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: background-color 0.2s;
+    padding: 1rem;
+}
+
+.form-upload:hover {
+    background-color: #ced4da;
+}
+
+.form-upload input {
+    display: none;
+}
+
+.form-upload.show-preview {
+    height: 128px;
+}
+
+.form-upload-image {
+    width: 48px;
+    height: 48px;
+}
+
+.form-upload-image.hidden {
+    display: none;
+}
+
+.form-upload-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.form-upload.error {
+    border: 1px solid red;
+}
+
+.form-upload-error {
+    color: red;
+    display: none;
+}
+
+.form-upload-error.visible {
+    display: inline-block;
+}

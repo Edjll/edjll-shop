@@ -1,0 +1,35 @@
+.edjll-validation-error,
+.edjll-validation-error-style {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__icon {
+    color: #d54646;
+    font-size: 1rem;
+  }
+
+  &__text {
+    display: none;
+    position: absolute;
+    width: max-content;
+    right: 100%;
+    background-color: #1f222d;
+    border-radius: .25rem;
+    padding: 0 .5rem;
+    color: #d54646;
+    font-weight: 600;
+    user-select: none;
+    border: 1px solid #181924;
+  }
+
+  &:hover &__text {
+      display: block;
+  }
+}

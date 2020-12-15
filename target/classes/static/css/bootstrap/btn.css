@@ -1,0 +1,14 @@
+.btn-custom {
+  color: #e1e1e1;
+  background-color: #4638c2;
+  border-color: #321fdb;
+  padding: 0.25rem 0.75rem;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.btn-custom:hover {
+  background-color: #3b2fa4;
+  border-color: #382d9a;
+  color: #e1e1e1;
+}
+
+/*# sourceMappingURL=btn.css.map */
