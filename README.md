@@ -8,9 +8,17 @@
   <li>Подгрузить все зависимости.</li>
   <li>В файле application.properties:
     <ul>
-      <li>Задать url подключения к СУБД MySQL в переменной spring.datasource.url.
-      <li>Задать имя входа для подключения к СУБД в spring.datasource.username.
-      <li>Задать пароль для входа в spring.datasource.password
+      <li>Задать url подключения к СУБД MySQL в переменной spring.datasource.url.</li>
+      <li>Задать имя входа для подключения к СУБД в spring.datasource.username.</li>
+      <li>Задать пароль для входа в spring.datasource.password</li>
+      <li>Прописать пути к папка с изображениями
+        <ul>
+          <li>manufacturer.upload.path</li>
+          <li>promotion.upload.path</li>
+          <li>productData.upload.path</li>
+          <li>review.upload.path</li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>В файле "shop.sql" содержится дамп базы данных.</li>
