@@ -24,7 +24,6 @@ public class QuestionRestController {
     @Autowired
     private QuestionService questionService;
 
-    @PreAuthorize("hasAuthority('USER')")
     @PostMapping(value = "/support/question/create")
     public ResponseEntity<Map<String, String>> addQuestion(
             @AuthenticationPrincipal User user,
